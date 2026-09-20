@@ -1,0 +1,101 @@
+MYSQL PRACTICE QUERIES WITH ANSWERS
+
+
+1. Display all employees
+SELECT * FROM employees;
+
+2. Increase salary of testers by 10%
+UPDATE employees
+SET salary = salary + (salary * 0.10)
+WHERE role = 'tester';
+
+3. Display employees whose salary is greater than 1166
+SELECT name, salary FROM employees WHERE salary > 1166;
+
+4. Display employees whose salary is less than 1166
+SELECT name, salary FROM employees WHERE salary < 1166;
+
+5. Display employees whose salary is greater than or equal to 1166
+SELECT name, salary FROM employees WHERE salary >= 1166;
+
+6. Display employees whose salary is less than or equal to 1166
+SELECT name, salary FROM employees WHERE salary <= 1166;
+
+7. Developer employees from Pune (both conditions)
+SELECT name, role, city FROM employees WHERE role='developer' AND city='pune';
+
+8. Testers OR employees from Pune (any one condition)
+SELECT name, role, city FROM employees WHERE role='tester' OR city='pune';
+
+9. Employees from Mumbai or Pune
+SELECT name, role, city FROM employees WHERE city='mumbai' OR city='pune';
+
+10. Employees from Mumbai or Pune using IN
+SELECT name, role, city FROM employees WHERE city IN ('pune','mumbai');
+
+11. Roles containing "dev"
+SELECT name, role, city FROM employees WHERE role LIKE '%dev%';
+
+12. Salary between 1166 and 2255
+SELECT name, role, city, salary FROM employees WHERE salary BETWEEN 1166 AND 2255;
+
+13. Display all employees
+SELECT * FROM employees;
+
+14. Names A to Z
+SELECT name FROM employees ORDER BY name ASC;
+
+15. Names Z to A
+SELECT name FROM employees ORDER BY name DESC;
+
+16. Salaries lowest to highest
+SELECT salary FROM employees ORDER BY salary ASC;
+
+17. Salaries highest to lowest
+SELECT salary FROM employees ORDER BY salary DESC;
+
+18. Top 2 highest salaries
+SELECT name, salary FROM employees ORDER BY salary DESC LIMIT 2;
+
+19. 3 lowest salaries
+SELECT name, salary FROM employees ORDER BY salary ASC LIMIT 3;
+
+20. Display all employees
+SELECT * FROM employees;
+
+21. Names A to Z
+SELECT name FROM employees ORDER BY name ASC;
+
+22. Names Z to A
+SELECT name FROM employees ORDER BY name DESC;
+
+23. Salaries lowest to highest
+SELECT salary FROM employees ORDER BY salary ASC;
+
+24. Salaries highest to lowest
+SELECT salary FROM employees ORDER BY salary DESC;
+
+25. Top 2 highest salaries
+SELECT name, salary FROM employees ORDER BY salary DESC LIMIT 2;
+
+26. 3 lowest salaries
+SELECT name, salary FROM employees ORDER BY salary ASC LIMIT 3;
+
+27. Sort by salary ascending, then name descending
+SELECT name, role, salary FROM employees ORDER BY salary ASC, name DESC;
+
+28. Display unique cities
+SELECT DISTINCT city FROM employees;
+
+29. Display unique roles with alias dept
+SELECT DISTINCT role AS dept FROM employees;
+
+30. Use complete table name for columns
+SELECT employees.name, employees.salary FROM employees;
+
+31. Use table alias e
+SELECT e.name, e.salary FROM employees AS e;
+
+32. Skip first 2 rows and display next 3 after salary sorting
+SELECT name, salary FROM employees ORDER BY salary DESC LIMIT 3 OFFSET 2;
+
